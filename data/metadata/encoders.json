@@ -1,0 +1,49 @@
+{
+    "protocol": {
+        "0": "ICMP",
+        "1": "TCP",
+        "2": "UDP"
+    },
+    "traffic_type": {
+        "0": "DNS",
+        "1": "FTP",
+        "2": "HTTP"
+    },
+    "severity_level": {
+        "0": "High",
+        "1": "Low",
+        "2": "Medium"
+    },
+    "network_segment": {
+        "0": "Segment A",
+        "1": "Segment B",
+        "2": "Segment C"
+    },
+    "mexico_state": {
+        "0": "Aguascalientes",
+        "1": "Baja California",
+        "2": "Chihuahua",
+        "3": "Ciudad de México",
+        "4": "Coahuila",
+        "5": "Durango",
+        "6": "Guanajuato",
+        "7": "Jalisco",
+        "8": "Michoacán",
+        "9": "Nuevo León",
+        "10": "Oaxaca",
+        "11": "Puebla",
+        "12": "Querétaro",
+        "13": "San Luis Potosí",
+        "14": "Sinaloa",
+        "15": "Sonora",
+        "16": "Tamaulipas",
+        "17": "Veracruz",
+        "18": "Yucatán",
+        "19": "Zacatecas"
+    },
+    "attack_type": {
+        "0": "DDoS",
+        "1": "Intrusion",
+        "2": "Malware"
+    }
+}
