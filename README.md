@@ -20,6 +20,86 @@ El proyecto implementa procesos ETL/ELT, almacenamiento en formato Parquet y Geo
 
 ---
 
+# Módulos Implementados
+
+## Dashboard Ejecutivo
+
+Panel principal para monitoreo de eventos de ciberseguridad.
+
+Incluye:
+
+- Total de ataques
+- Estado más afectado
+- Tipo de ataque dominante
+- Severidad dominante
+- Desempeño de modelos ML
+
+---
+
+## Threat Intelligence
+
+Módulo especializado para análisis de amenazas.
+
+Incluye:
+
+- Attack Type Distribution
+- Severity Distribution
+- Protocol Analysis
+- Traffic Type Analysis
+- Network Segment Analysis
+
+---
+
+## Geo Intelligence
+
+Visualización geoespacial de ataques.
+
+Incluye:
+
+- Mapa interactivo de México
+- Distribución de ataques por estado
+- GeoJSON
+- Leaflet
+
+---
+
+## Machine Learning
+
+Monitoreo de desempeño de modelos.
+
+Incluye:
+
+- Best Model KPIs
+- Accuracy Comparison
+- Precision vs Recall
+- Metrics Table
+
+---
+
+## Model Evaluation
+
+Comparación avanzada de modelos.
+
+Incluye:
+
+- Ranking de modelos
+- Radar Chart
+- Leaderboard
+
+---
+
+## API Monitoring
+
+Monitoreo de disponibilidad de servicios.
+
+Incluye:
+
+- Estado de endpoints
+- Disponibilidad
+- KPIs de salud de APIs
+
+---
+
 # Dataset
 
 Dataset utilizado:
@@ -48,6 +128,16 @@ Dataset utilizado:
 ## Machine Learning
 - Scikit-learn
 - Random Forest
+- XGBoost
+- CatBoost
+
+## Visualización
+
+- AdminLTE
+- Bootstrap 5
+- ApexCharts
+- Leaflet
+- OpenStreetMap
 
 ## Formatos de Datos
 - CSV
@@ -66,7 +156,17 @@ El proyecto implementa una arquitectura basada en Data Lakehouse para procesamie
 ## Flujo General
 
 ```text
-RAW → CLEAN → PROCESSED → MACHINE LEARNING → DASHBOARD
+RAW
+ ↓
+CLEAN
+ ↓
+PROCESSED
+ ↓
+MACHINE LEARNING
+ ↓
+REST API
+ ↓
+ANALYTICS DASHBOARDS
 ```
 
 ## Capas del Data Lakehouse
@@ -84,6 +184,12 @@ Datasets preparados para Machine Learning y análisis avanzado.
 Estructuras GeoDataFrame y GeoParquet para análisis geoespacial.
 
 ---
+
+# Root Cause Analysis
+
+El siguiente diagrama Ishikawa resume los factores considerados durante el desarrollo y optimización del modelo de clasificación de ataques cibernéticos.
+
+![Ishikawa Diagram](docs/images/Ishikawa.png)
 
 # Estructura del Proyecto
 
@@ -178,6 +284,24 @@ docker-compose down
 
 El proyecto implementa procesos de preparación y entrenamiento de modelos de Machine Learning orientados a clasificación de ataques cibernéticos.
 
+## Modelos Implementados
+
+### Random Forest
+
+Accuracy: 33.94%
+
+### XGBoost
+
+Accuracy: 32.31%
+
+### CatBoost
+
+Accuracy: 32.45%
+
+### Mejor Modelo
+
+Random Forest
+
 ## Pipeline ML
 
 - Selección de features
@@ -223,6 +347,38 @@ El proyecto incorpora procesamiento geoespacial mediante GeoPandas para regional
 ```text
 CRS: EPSG:4326
 ```
+
+---
+
+# REST API
+
+La plataforma expone servicios REST para consumo analítico.
+
+## Endpoints Principales
+
+### Executive KPIs
+
+/analytics/executive-kpis
+
+### Threat Intelligence
+
+/threat/overview
+
+### Geo Intelligence
+
+/geo/attacks-by-state
+
+/geo/mexico-geojson
+
+### Machine Learning
+
+/ml/metrics
+
+/ml/best-model
+
+### Monitoring
+
+/api/status
 
 ---
 # Equipo del Proyecto
@@ -304,24 +460,37 @@ Data Lakehouse         ██████████ 100%
 ETL / ELT              ██████████ 100%
 GeoSpatial             ██████████ 100%
 EDA                    ██████████ 100%
-Machine Learning       ████████░░  80%
-Dashboard              ███░░░░░░░  30%
-API REST               ██░░░░░░░░  20%
-```
+Machine Learning       ██████████ 100%
+REST API               ██████████ 100%
+Dashboard Ejecutivo    ██████████ 100%
+Threat Intelligence    ██████████ 100%
+Geo Intelligence       ██████████ 100%
+Model Evaluation       ██████████ 100%
+API Monitoring         ██████████ 100%
 
 ---
 
+# 8. Actualizar Roadmap
+
+Actualmente el roadmap habla de construir dashboard y API. :contentReference[oaicite:2]{index=2}
+
+Eso ya está terminado.
+
+Reemplazar por:
+
+```markdown
 # Roadmap
 
-## Próximas Implementaciones
+## Futuras Mejoras
 
-- Dashboard interactivo
-- API REST para consulta analítica
-- Storytelling visual
-- Integración Apache Superset
-- Automatización de pipelines
-- Modelos avanzados de Machine Learning
-- Monitoreo y observabilidad
+- Integración con Apache Superset
+- Automatización completa de pipelines
+- Entrenamiento incremental de modelos
+- Despliegue cloud
+- Observabilidad avanzada
+- Integración SIEM
+- Detección de anomalías en tiempo real
+- Streaming analytics
 
 ---
 
